@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b40526a1-bc37-4979-b99f-7b3db77446ba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/full/ae2d0284391c5a5fa7815f2faf52f324b6cc2e2e.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wikiart_webcrawler/items.py" afterPath="$PROJECT_DIR$/wikiart_webcrawler/items.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wikiart_webcrawler/pipelines.py" afterPath="$PROJECT_DIR$/wikiart_webcrawler/pipelines.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wikiart_webcrawler/settings.py" afterPath="$PROJECT_DIR$/wikiart_webcrawler/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/shakedlokits.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/shakedlokits.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.json" afterPath="$PROJECT_DIR$/test.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_vectorizer/vectorizer.py" afterPath="$PROJECT_DIR$/image_vectorizer/vectorizer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wikiart_webcrawler/spiders/wikiart_crawler.py" afterPath="$PROJECT_DIR$/wikiart_webcrawler/spiders/wikiart_crawler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="wikiart_webcrawler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/image_vectorizer/vectorizer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -69,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wikiart_crawler.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wikiart_crawler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wikiart_webcrawler/spiders/wikiart_crawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17094018">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="58" column="92" selection-start-line="58" selection-start-column="92" selection-end-line="58" selection-end-column="92" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -101,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wikiart_webcrawler/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.82905984">
+              <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -134,8 +125,8 @@
         <option value="$PROJECT_DIR$/image_vectorizer/image_vectorizer.py" />
         <option value="$PROJECT_DIR$/wikiart_webcrawler/items.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/wikiart_webcrawler/spiders/wikiart_crawler.py" />
         <option value="$PROJECT_DIR$/wikiart_webcrawler/pipelines.py" />
+        <option value="$PROJECT_DIR$/wikiart_webcrawler/spiders/wikiart_crawler.py" />
         <option value="$PROJECT_DIR$/image_vectorizer/vectorizer.py" />
         <option value="$PROJECT_DIR$/wikiart_webcrawler/settings.py" />
       </list>
@@ -552,10 +543,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wikiart_webcrawler/spiders/wikiart_crawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="92" selection-start-line="58" selection-start-column="92" selection-end-line="58" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/image_vectorizer/vectorizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -564,19 +565,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wikiart_webcrawler/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.82905984">
+          <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wikiart_webcrawler/spiders/wikiart_crawler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17094018">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

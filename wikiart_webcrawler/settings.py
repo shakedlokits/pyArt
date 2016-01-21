@@ -9,7 +9,7 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'wikiart_sample'
+BOT_NAME = 'wikiart_global'
 SPIDER_MODULES = ['wikiart_webcrawler.spiders']
 NEWSPIDER_MODULE = 'wikiart_webcrawler.spiders'
 
@@ -81,4 +81,7 @@ IMAGES_STORE = './images'
 #HTTPCACHE_IGNORE_HTTP_CODES=[]
 #HTTPCACHE_STORAGE='scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-#TODO add logging level
+# Logging and output settings
+LOG_LEVEL = 'INFO'
+LOG_FILE = './data/scrapy_log.log'
+FEED_URI = './data/wikiart_data.json'

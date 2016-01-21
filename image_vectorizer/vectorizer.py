@@ -15,7 +15,7 @@ LBP_POINTS = 8 * LBP_RADIUS
 LBP_HIST_BIN = 2 ** 6
 
 # debug prompts flag
-DEBUG = True
+DEBUG = False
 
 
 def get_descriptor(image_path):

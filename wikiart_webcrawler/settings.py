@@ -9,7 +9,7 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'wikiart'
+BOT_NAME = 'wikiart_sample'
 SPIDER_MODULES = ['wikiart_webcrawler.spiders']
 NEWSPIDER_MODULE = 'wikiart_webcrawler.spiders'
 
@@ -59,7 +59,7 @@ NEWSPIDER_MODULE = 'wikiart_webcrawler.spiders'
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {'wikiart_webcrawler.pipelines.ImageParserPipeline': 1}
+ITEM_PIPELINES = {'wikiart_webcrawler.pipelines.ArtworkDescriptorPipeline': 1}
 IMAGES_STORE = './images'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -80,3 +80,5 @@ IMAGES_STORE = './images'
 #HTTPCACHE_DIR='httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES=[]
 #HTTPCACHE_STORAGE='scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+#TODO add logging level

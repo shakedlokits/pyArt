@@ -1,9 +1,7 @@
-from matplotlib import cm
 import skimage.io as io
 from skimage import img_as_float
 from skimage.color import rgb2gray
 from skimage.feature import hog, local_binary_pattern
-import matplotlib.pyplot as plt
 import numpy as np
 
 # constant descriptor parameters
@@ -34,8 +32,9 @@ def get_descriptor(image_path):
     # concatenate final descriptor
     descriptor = hist_vec + averaged_hog + lbp_hist
 
-    if DEBUG:
-        plot_graph(descriptor)
+    # NOTE: used for debug, requires matplotlib
+    # if DEBUG:
+    #     plot_graph(descriptor)
 
     return descriptor
 
@@ -101,19 +100,20 @@ def load_image(image_path):
 
     return float_image
 
-
-def show_image(image):
-    plt.figure()
-    if len(image.shape) == 3:
-        plt.imshow(image)
-    elif len(image.shape) == 2:
-        plt.imshow(image, cmap=cm.Greys_r)
-    else:
-        raise Exception("Image Dimension Error")
-    plt.show()
-
-
-def plot_graph(data):
-    plt.figure()
-    plt.plot(data)
-    plt.show()
+# NOTE: used for debug purposes, requires matplotlib
+#
+# def show_image(image):
+#     plt.figure()
+#     if len(image.shape) == 3:
+#         plt.imshow(image)
+#     elif len(image.shape) == 2:
+#         plt.imshow(image, cmap=cm.Greys_r)
+#     else:
+#         raise Exception("Image Dimension Error")
+#     plt.show()
+#
+#
+# def plot_graph(data):
+#     plt.figure()
+#     plt.plot(data)
+#     plt.show()

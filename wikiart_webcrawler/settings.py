@@ -60,7 +60,11 @@ NEWSPIDER_MODULE = 'wikiart_webcrawler.spiders'
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {'wikiart_webcrawler.pipelines.ArtworkDescriptorPipeline': 1}
-IMAGES_STORE = './images'
+IMAGES_STORE = 's3://wikiart/images'
+IMAGES_URLS_FIELD = 'image_urls'
+IMAGES_RESULT_FIELD = 'image_urls'
+AWS_ACCESS_KEY_ID = 'AKIAJBO3VM46O7FZ6TVQ'
+AWS_SECRET_ACCESS_KEY = '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'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

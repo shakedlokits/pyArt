@@ -20,14 +20,15 @@ class ArtworkDescriptorPipeline(ImagesPipeline):
         if not image_paths:
             raise DropItem("Item contains no images")
 
-        # set the path to the Artwork's 'images' data member
-        artwork['descriptor'] = get_descriptor(image_paths)
+        # set the path to the Artwork's 'images' data member TODO revert to descriptor parsing
+        # artwork['descriptor'] = get_descriptor(image_paths)
+        artwork['images'] = image_paths
 
-        # unset 'image_urls' field for final parsing
-        del artwork['image_urls']
+        # unset 'image_urls' field for final parsing TODO restore field deletion
+        # del artwork['image_urls']
 
-        # remove image file
-        remove("./images/"+image_paths[0])
+        # remove image file TODO restore image deletion for amazon
+        # remove("./images/"+image_paths[0])
 
         # return artwork
         return artwork

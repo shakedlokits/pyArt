@@ -1,0 +1,3 @@
+[scrapy]
+settings = wikiart_webcrawler.settings
+

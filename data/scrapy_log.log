@@ -1,0 +1,297 @@
+2016-01-22 18:49:14 [scrapy] INFO: Scrapy 1.0.4 started (bot: wikiart_global)
+2016-01-22 18:49:14 [scrapy] INFO: Optional features available: ssl, http11
+2016-01-22 18:49:14 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'wikiart_webcrawler.spiders', 'FEED_URI': './data/wikiart_data.json', 'LOG_LEVEL': 'INFO', 'SPIDER_MODULES': ['wikiart_webcrawler.spiders'], 'BOT_NAME': 'wikiart_global', 'LOG_FILE': './data/scrapy_log.log'}
+2016-01-22 18:49:14 [scrapy] INFO: Enabled extensions: CloseSpider, FeedExporter, TelnetConsole, LogStats, CoreStats, SpiderState
+2016-01-22 18:49:15 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2016-01-22 18:49:15 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2016-01-22 18:49:15 [twisted] CRITICAL: Unhandled error in Deferred:
+2016-01-22 18:49:15 [twisted] CRITICAL: 
+2016-01-23 23:06:57 [scrapy] INFO: Scrapy 1.0.4 started (bot: wikiart_global)
+2016-01-23 23:06:57 [scrapy] INFO: Optional features available: ssl, http11
+2016-01-23 23:06:57 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'wikiart_webcrawler.spiders', 'FEED_URI': './data/wikiart_data.json', 'LOG_LEVEL': 'INFO', 'SPIDER_MODULES': ['wikiart_webcrawler.spiders'], 'BOT_NAME': 'wikiart_global', 'LOG_FILE': './data/scrapy_log.log'}
+2016-01-23 23:07:04 [scrapy] INFO: Scrapy 1.0.4 started (bot: wikiart_global)
+2016-01-23 23:07:04 [scrapy] INFO: Optional features available: ssl, http11
+2016-01-23 23:07:04 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'wikiart_webcrawler.spiders', 'FEED_URI': './data/wikiart_data.json', 'LOG_LEVEL': 'INFO', 'SPIDER_MODULES': ['wikiart_webcrawler.spiders'], 'BOT_NAME': 'wikiart_global', 'LOG_FILE': './data/scrapy_log.log'}
+2016-01-23 23:07:04 [scrapy] INFO: Enabled extensions: CloseSpider, FeedExporter, TelnetConsole, LogStats, CoreStats, SpiderState
+2016-01-23 23:07:04 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2016-01-23 23:07:04 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2016-01-23 23:07:05 [scrapy] INFO: Enabled item pipelines: ArtworkDescriptorPipeline
+2016-01-23 23:07:05 [scrapy] INFO: Spider opened
+2016-01-23 23:07:05 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-01-23 23:07:10 [scrapy] ERROR: File (unknown-error): Error processing file from <GET http://uploads2.wikiart.org/images/hans-von-aachen/two-laughing-men-double-self-portrait-1574.jpg!Large.jpg> referred in <None>
+Traceback (most recent call last):
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/scrapy/pipelines/files.py", line 267, in media_downloaded
+    checksum = self.file_downloaded(response, request, info)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/scrapy/pipelines/images.py", line 60, in file_downloaded
+    return self.image_downloaded(response, request, info)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/scrapy/pipelines/images.py", line 72, in image_downloaded
+    headers={'Content-Type': 'image/jpeg'})
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/scrapy/pipelines/files.py", line 114, in persist_file
+    b = self._get_boto_bucket()
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/scrapy/pipelines/files.py", line 101, in _get_boto_bucket
+    from boto.s3.connection import S3Connection
+ImportError: No module named boto.s3.connection
+2016-01-23 23:07:10 [scrapy] WARNING: Dropped: Item contains no images
+{'image_urls': [u'http://uploads2.wikiart.org/images/hans-von-aachen/two-laughing-men-double-self-portrait-1574.jpg!Large.jpg'],
+ 'style': [u'Mannerism (Late Renaissance)']}
+2016-01-23 23:07:10 [scrapy] INFO: Closing spider (finished)
+2016-01-23 23:07:10 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1559,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 118427,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 5,
+ 'file_count': 1,
+ 'file_status_count/downloaded': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 1, 23, 21, 7, 10, 981875),
+ 'item_dropped_count': 1,
+ 'item_dropped_reasons_count/DropItem': 1,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 7,
+ 'log_count/WARNING': 1,
+ 'request_depth_max': 3,
+ 'response_received_count': 5,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2016, 1, 23, 21, 7, 5, 506550)}
+2016-01-23 23:07:10 [scrapy] INFO: Spider closed (finished)
+2016-01-23 23:10:12 [scrapy] INFO: Scrapy 1.0.4 started (bot: wikiart_global)
+2016-01-23 23:10:12 [scrapy] INFO: Optional features available: ssl, http11
+2016-01-23 23:10:12 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'wikiart_webcrawler.spiders', 'FEED_URI': './data/wikiart_data.json', 'LOG_LEVEL': 'INFO', 'SPIDER_MODULES': ['wikiart_webcrawler.spiders'], 'BOT_NAME': 'wikiart_global', 'FEED_FORMAT': 'json', 'LOG_FILE': './data/scrapy_log.log'}
+2016-01-23 23:10:12 [scrapy] INFO: Enabled extensions: CloseSpider, FeedExporter, TelnetConsole, LogStats, CoreStats, SpiderState
+2016-01-23 23:10:12 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2016-01-23 23:10:12 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2016-01-23 23:10:13 [scrapy] INFO: Enabled item pipelines: ArtworkDescriptorPipeline
+2016-01-23 23:10:13 [scrapy] INFO: Spider opened
+2016-01-23 23:10:13 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-01-23 23:10:15 [scrapy] ERROR: File (unknown-error): Error processing file from <GET http://uploads2.wikiart.org/images/hans-von-aachen/two-laughing-men-double-self-portrait-1574.jpg!Large.jpg> referred in <None>
+Traceback (most recent call last):
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/scrapy/pipelines/files.py", line 267, in media_downloaded
+    checksum = self.file_downloaded(response, request, info)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/scrapy/pipelines/images.py", line 60, in file_downloaded
+    return self.image_downloaded(response, request, info)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/scrapy/pipelines/images.py", line 72, in image_downloaded
+    headers={'Content-Type': 'image/jpeg'})
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/scrapy/pipelines/files.py", line 114, in persist_file
+    b = self._get_boto_bucket()
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/scrapy/pipelines/files.py", line 101, in _get_boto_bucket
+    from boto.s3.connection import S3Connection
+ImportError: No module named boto.s3.connection
+2016-01-23 23:10:15 [scrapy] WARNING: Dropped: Item contains no images
+{'image_urls': [u'http://uploads2.wikiart.org/images/hans-von-aachen/two-laughing-men-double-self-portrait-1574.jpg!Large.jpg'],
+ 'style': [u'Mannerism (Late Renaissance)']}
+2016-01-23 23:10:15 [scrapy] INFO: Closing spider (finished)
+2016-01-23 23:10:15 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1559,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 118425,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 5,
+ 'file_count': 1,
+ 'file_status_count/downloaded': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 1, 23, 21, 10, 15, 510395),
+ 'item_dropped_count': 1,
+ 'item_dropped_reasons_count/DropItem': 1,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 7,
+ 'log_count/WARNING': 1,
+ 'request_depth_max': 3,
+ 'response_received_count': 5,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2016, 1, 23, 21, 10, 13, 37174)}
+2016-01-23 23:10:15 [scrapy] INFO: Spider closed (finished)
+2016-01-23 23:14:03 [scrapy] INFO: Scrapy 1.0.4 started (bot: wikiart_global)
+2016-01-23 23:14:03 [scrapy] INFO: Optional features available: ssl, http11, boto
+2016-01-23 23:14:03 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'wikiart_webcrawler.spiders', 'FEED_URI': './data/wikiart_data.json', 'LOG_LEVEL': 'INFO', 'SPIDER_MODULES': ['wikiart_webcrawler.spiders'], 'BOT_NAME': 'wikiart_global', 'FEED_FORMAT': 'json', 'LOG_FILE': './data/scrapy_log.log'}
+2016-01-23 23:14:03 [scrapy] INFO: Enabled extensions: CloseSpider, FeedExporter, TelnetConsole, LogStats, CoreStats, SpiderState
+2016-01-23 23:14:03 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2016-01-23 23:14:03 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2016-01-23 23:14:04 [scrapy] INFO: Enabled item pipelines: ArtworkDescriptorPipeline
+2016-01-23 23:14:04 [scrapy] INFO: Spider opened
+2016-01-23 23:14:04 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-01-23 23:14:07 [scrapy] INFO: Closing spider (finished)
+2016-01-23 23:14:07 [scrapy] INFO: Stored json feed (1 items) in: ./data/wikiart_data.json
+2016-01-23 23:14:07 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1559,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 118428,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 5,
+ 'file_count': 1,
+ 'file_status_count/downloaded': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 1, 23, 21, 14, 7, 447689),
+ 'item_scraped_count': 1,
+ 'log_count/INFO': 8,
+ 'request_depth_max': 3,
+ 'response_received_count': 5,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2016, 1, 23, 21, 14, 4, 184978)}
+2016-01-23 23:14:07 [scrapy] INFO: Spider closed (finished)
+2016-01-24 00:03:13 [scrapy] INFO: Scrapy 1.0.4 started (bot: wikiart_global)
+2016-01-24 00:03:13 [scrapy] INFO: Optional features available: ssl, http11, boto
+2016-01-24 00:03:13 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'wikiart_webcrawler.spiders', 'FEED_URI': './data/wikiart_data.json', 'LOG_LEVEL': 'INFO', 'SPIDER_MODULES': ['wikiart_webcrawler.spiders'], 'BOT_NAME': 'wikiart_global', 'LOG_FILE': './data/scrapy_log.log'}
+2016-01-24 00:03:13 [scrapy] INFO: Enabled extensions: CloseSpider, FeedExporter, TelnetConsole, LogStats, CoreStats, SpiderState
+2016-01-24 00:03:13 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2016-01-24 00:03:13 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2016-01-24 00:03:13 [botocore.credentials] INFO: Found credentials in environment variables.
+2016-01-24 00:03:13 [scrapy] INFO: Enabled item pipelines: ArtworkDescriptorPipeline
+2016-01-24 00:03:13 [scrapy] INFO: Spider opened
+2016-01-24 00:03:13 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-01-24 00:03:16 [boto3.resources.action] INFO: Calling s3:get_object with {u'Bucket': 'wikiart', u'Key': ['full/ae2d0284391c5a5fa7815f2faf52f324b6cc2e2e.jpg']}
+2016-01-24 00:03:16 [scrapy] ERROR: Error processing {'image_urls': [u'http://uploads2.wikiart.org/images/hans-von-aachen/two-laughing-men-double-self-portrait-1574.jpg!Large.jpg'],
+ 'style': [u'Mannerism (Late Renaissance)']}
+Traceback (most recent call last):
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/twisted/internet/defer.py", line 588, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/shakedlokits/Documents/Projects/wikiart_webcrawler/wikiart_webcrawler/pipelines.py", line 28, in item_completed
+    artwork['descriptor'] = get_descriptor(image_paths)
+  File "/Users/shakedlokits/Documents/Projects/wikiart_webcrawler/image_vectorizer/vectorizer.py", line 22, in get_descriptor
+    image = load_image(image_path)
+  File "/Users/shakedlokits/Documents/Projects/wikiart_webcrawler/image_vectorizer/vectorizer.py", line 94, in load_image
+    download = wikiart_bucket.Object(image_path).get()['Body']
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/boto3/resources/factory.py", line 455, in do_action
+    response = action(self, *args, **kwargs)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/boto3/resources/action.py", line 79, in __call__
+    response = getattr(parent.meta.client, operation_name)(**params)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/botocore/client.py", line 310, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/botocore/client.py", line 383, in _make_api_call
+    api_params, operation_model, context=request_context)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/botocore/client.py", line 436, in _convert_to_request_dict
+    api_params, operation_model)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/botocore/validate.py", line 273, in serialize_to_request
+    raise ParamValidationError(report=report.generate_report())
+ParamValidationError: Parameter validation failed:
+Invalid type for parameter Key, value: ['full/ae2d0284391c5a5fa7815f2faf52f324b6cc2e2e.jpg'], type: <type 'list'>, valid types: <type 'basestring'>
+2016-01-24 00:03:16 [scrapy] INFO: Closing spider (finished)
+2016-01-24 00:03:16 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1559,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 118406,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 5,
+ 'file_count': 1,
+ 'file_status_count/downloaded': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 1, 23, 22, 3, 16, 847818),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 9,
+ 'request_depth_max': 3,
+ 'response_received_count': 5,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2016, 1, 23, 22, 3, 13, 661963)}
+2016-01-24 00:03:16 [scrapy] INFO: Spider closed (finished)
+2016-01-24 00:03:36 [scrapy] INFO: Scrapy 1.0.4 started (bot: wikiart_global)
+2016-01-24 00:03:36 [scrapy] INFO: Optional features available: ssl, http11, boto
+2016-01-24 00:03:36 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'wikiart_webcrawler.spiders', 'FEED_URI': './data/wikiart_data.json', 'LOG_LEVEL': 'INFO', 'SPIDER_MODULES': ['wikiart_webcrawler.spiders'], 'BOT_NAME': 'wikiart_global', 'FEED_FORMAT': 'json', 'LOG_FILE': './data/scrapy_log.log'}
+2016-01-24 00:03:36 [scrapy] INFO: Enabled extensions: CloseSpider, FeedExporter, TelnetConsole, LogStats, CoreStats, SpiderState
+2016-01-24 00:03:36 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2016-01-24 00:03:36 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2016-01-24 00:03:37 [botocore.credentials] INFO: Found credentials in environment variables.
+2016-01-24 00:03:37 [scrapy] INFO: Enabled item pipelines: ArtworkDescriptorPipeline
+2016-01-24 00:03:37 [scrapy] INFO: Spider opened
+2016-01-24 00:03:37 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-01-24 00:03:39 [boto3.resources.action] INFO: Calling s3:get_object with {u'Bucket': 'wikiart', u'Key': ['full/ae2d0284391c5a5fa7815f2faf52f324b6cc2e2e.jpg']}
+2016-01-24 00:03:39 [scrapy] ERROR: Error processing {'image_urls': [u'http://uploads2.wikiart.org/images/hans-von-aachen/two-laughing-men-double-self-portrait-1574.jpg!Large.jpg'],
+ 'style': [u'Mannerism (Late Renaissance)']}
+Traceback (most recent call last):
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/twisted/internet/defer.py", line 588, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/shakedlokits/Documents/Projects/wikiart_webcrawler/wikiart_webcrawler/pipelines.py", line 28, in item_completed
+    artwork['descriptor'] = get_descriptor(image_paths)
+  File "/Users/shakedlokits/Documents/Projects/wikiart_webcrawler/image_vectorizer/vectorizer.py", line 22, in get_descriptor
+    image = load_image(image_path)
+  File "/Users/shakedlokits/Documents/Projects/wikiart_webcrawler/image_vectorizer/vectorizer.py", line 94, in load_image
+    download = wikiart_bucket.Object(image_path).get()['Body']
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/boto3/resources/factory.py", line 455, in do_action
+    response = action(self, *args, **kwargs)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/boto3/resources/action.py", line 79, in __call__
+    response = getattr(parent.meta.client, operation_name)(**params)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/botocore/client.py", line 310, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/botocore/client.py", line 383, in _make_api_call
+    api_params, operation_model, context=request_context)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/botocore/client.py", line 436, in _convert_to_request_dict
+    api_params, operation_model)
+  File "/Users/shakedlokits/Library/Python/2.7/lib/python/site-packages/botocore/validate.py", line 273, in serialize_to_request
+    raise ParamValidationError(report=report.generate_report())
+ParamValidationError: Parameter validation failed:
+Invalid type for parameter Key, value: ['full/ae2d0284391c5a5fa7815f2faf52f324b6cc2e2e.jpg'], type: <type 'list'>, valid types: <type 'basestring'>
+2016-01-24 00:03:39 [scrapy] INFO: Closing spider (finished)
+2016-01-24 00:03:39 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1262,
+ 'downloader/request_count': 4,
+ 'downloader/request_method_count/GET': 4,
+ 'downloader/response_bytes': 87561,
+ 'downloader/response_count': 4,
+ 'downloader/response_status_count/200': 4,
+ 'file_count': 1,
+ 'file_status_count/uptodate': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 1, 23, 22, 3, 39, 385683),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 9,
+ 'request_depth_max': 3,
+ 'response_received_count': 4,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2016, 1, 23, 22, 3, 37, 109539)}
+2016-01-24 00:03:39 [scrapy] INFO: Spider closed (finished)
+2016-01-24 00:04:46 [scrapy] INFO: Scrapy 1.0.4 started (bot: wikiart_global)
+2016-01-24 00:04:46 [scrapy] INFO: Optional features available: ssl, http11, boto
+2016-01-24 00:04:46 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'wikiart_webcrawler.spiders', 'FEED_URI': './data/wikiart_data.json', 'LOG_LEVEL': 'INFO', 'SPIDER_MODULES': ['wikiart_webcrawler.spiders'], 'BOT_NAME': 'wikiart_global', 'FEED_FORMAT': 'json', 'LOG_FILE': './data/scrapy_log.log'}
+2016-01-24 00:04:46 [scrapy] INFO: Enabled extensions: CloseSpider, FeedExporter, TelnetConsole, LogStats, CoreStats, SpiderState
+2016-01-24 00:04:46 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2016-01-24 00:04:46 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2016-01-24 00:04:46 [botocore.credentials] INFO: Found credentials in environment variables.
+2016-01-24 00:04:46 [scrapy] INFO: Enabled item pipelines: ArtworkDescriptorPipeline
+2016-01-24 00:04:46 [scrapy] INFO: Spider opened
+2016-01-24 00:04:46 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-01-24 00:04:49 [boto3.resources.action] INFO: Calling s3:get_object with {u'Bucket': 'wikiart', u'Key': 'full/ae2d0284391c5a5fa7815f2faf52f324b6cc2e2e.jpg'}
+2016-01-24 00:04:49 [botocore.vendored.requests.packages.urllib3.connectionpool] INFO: Starting new HTTPS connection (1): wikiart.s3.amazonaws.com
+2016-01-24 00:04:51 [boto3.resources.collection] INFO: Calling paginated s3:list_objects with {u'Bucket': 'wikiart'}
+2016-01-24 00:04:51 [botocore.vendored.requests.packages.urllib3.connectionpool] INFO: Starting new HTTPS connection (1): wikiart.s3.amazonaws.com
+2016-01-24 00:04:52 [boto3.resources.action] INFO: Calling s3:delete_objects with {u'Bucket': 'wikiart', u'Delete': {u'Objects': [{u'Key': u'full/ae2d0284391c5a5fa7815f2faf52f324b6cc2e2e.jpg'}]}}
+2016-01-24 00:04:52 [scrapy] INFO: Closing spider (finished)
+2016-01-24 00:04:52 [scrapy] INFO: Stored json feed (1 items) in: ./data/wikiart_data.json
+2016-01-24 00:04:52 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1262,
+ 'downloader/request_count': 4,
+ 'downloader/request_method_count/GET': 4,
+ 'downloader/response_bytes': 87560,
+ 'downloader/response_count': 4,
+ 'downloader/response_status_count/200': 4,
+ 'file_count': 1,
+ 'file_status_count/uptodate': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 1, 23, 22, 4, 52, 732125),
+ 'item_scraped_count': 1,
+ 'log_count/INFO': 14,
+ 'request_depth_max': 3,
+ 'response_received_count': 4,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2016, 1, 23, 22, 4, 46, 856014)}
+2016-01-24 00:04:52 [scrapy] INFO: Spider closed (finished)

@@ -1,0 +1,15 @@
+setup.py
+image_vectorizer/__init__.py
+image_vectorizer/vectorizer.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/requires.txt
+project.egg-info/top_level.txt
+wikiart_webcrawler/__init__.py
+wikiart_webcrawler/items.py
+wikiart_webcrawler/pipelines.py
+wikiart_webcrawler/settings.py
+wikiart_webcrawler/spiders/__init__.py
+wikiart_webcrawler/spiders/wikiart_crawler.py

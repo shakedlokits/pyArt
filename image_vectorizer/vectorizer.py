@@ -92,9 +92,9 @@ def get_histogram_vector(image):
 
 def load_image(image_path):
 
-    resp = urllib.urlopen(url)
+    resp = urllib.urlopen(image_path)
     image = np.asarray(bytearray(resp.read()), dtype="uint8")
     image = cv2.imdecode(image, cv2.IMREAD_COLOR)
 
+    return image 
 
-    return image

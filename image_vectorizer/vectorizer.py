@@ -1,10 +1,6 @@
-import skimage.io as io
-from skimage import img_as_float
 from skimage.color import rgb2gray
 from skimage.feature import hog, local_binary_pattern
 import numpy as np
-from PIL import Image
-import boto3
 
 # constant descriptor parameters
 RGB_HIST_BINS = 8
@@ -14,12 +10,8 @@ LBP_RADIUS = 3
 LBP_POINTS = 8 * LBP_RADIUS
 LBP_HIST_BIN = 2 ** 6
 
-# initialize wikiart s3 bucket
-wikiart_bucket = boto3.resource('s3').Bucket('wikiart')
 
-def get_descriptor(image_path):
-    # load image from image path
-    image = load_image(image_path)
+def get_descriptor(image):
 
     # get the color channel histograms (duplicates if b/w)
     hist_vec = get_histogram_vector(image)
@@ -86,15 +78,3 @@ def get_histogram_vector(image):
 
     # return concatenation of histograms
     return norm_r_hist.tolist() + norm_g_hist.tolist() + norm_b_hist.tolist()
-
-
-def load_image(image_path):
-
-    # get image from bucket
-    download = wikiart_bucket.Object(image_path).get()['Body']
-    image = np.array(Image.open(download))
-
-    # set image to floats
-    float_image = img_as_float(image)
-
-    return float_image

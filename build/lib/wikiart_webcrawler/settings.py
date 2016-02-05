@@ -59,10 +59,9 @@ NEWSPIDER_MODULE = 'wikiart_webcrawler.spiders'
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {'wikiart_webcrawler.pipelines.ArtworkDescriptorPipeline': 1}
-IMAGES_STORE = 's3://wikiart/'
-AWS_ACCESS_KEY_ID = 'AKIAJBO3VM46O7FZ6TVQ'
-AWS_SECRET_ACCESS_KEY = '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'
+ITEM_PIPELINES = {
+    'wikiart_webcrawler.pipelines.ArtworkDescriptorPipeline': 1
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -84,6 +83,6 @@ AWS_SECRET_ACCESS_KEY = 'Ld6najLot363wb4lTiQgN8zI8WFNZuQyEj0rEZ4O'
 #HTTPCACHE_STORAGE='scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 # Logging and output settings
-LOG_LEVEL = 'INFO'
+LOG_LEVEL = 'DEBUG'
 LOG_FILE = './data/scrapy_log.log'
 FEED_URI = './data/wikiart_data.json'

@@ -1,10 +1,5 @@
-import skimage.io as io
-from skimage import img_as_float
-from skimage.color import rgb2gray
-from skimage.feature import hog, local_binary_pattern
+from skimage import color, feature
 import numpy as np
-from PIL import Image
-import boto3
 
 # constant descriptor parameters
 RGB_HIST_BINS = 8
@@ -14,12 +9,8 @@ LBP_RADIUS = 3
 LBP_POINTS = 8 * LBP_RADIUS
 LBP_HIST_BIN = 2 ** 6
 
-# initialize wikiart s3 bucket
-wikiart_bucket = boto3.resource('s3').Bucket('wikiart')
 
-def get_descriptor(image_path):
-    # load image from image path
-    image = load_image(image_path)
+def get_descriptor(image):
 
     # get the color channel histograms (duplicates if b/w)
     hist_vec = get_histogram_vector(image)
@@ -38,10 +29,10 @@ def get_descriptor(image_path):
 
 def get_lbp_vector(image):
     # set image to grays
-    gray = rgb2gray(image)
+    gray = color.rgb2gray(image)
 
     # evaluate lbp image reshaped into vector
-    lbp = local_binary_pattern(gray, P=LBP_POINTS, R=LBP_RADIUS).ravel()
+    lbp = feature.local_binary_pattern(gray, P=LBP_POINTS, R=LBP_RADIUS).ravel()
 
     # take histogram of the lbp image
     lbp_hist = np.histogram(lbp, bins=LBP_HIST_BIN)[0]
@@ -54,10 +45,10 @@ def get_lbp_vector(image):
 
 def get_hog_vector(image):
     # set image to grays
-    gray = rgb2gray(image)
+    gray = color.rgb2gray(image)
 
     # evaluate the HoG of the image over a 16x16 window
-    image_hog = hog(gray, orientations=HOG_ORIENTATIONS, pixels_per_cell=HOG_WINDOW_SIZE, cells_per_block=(1, 1))
+    image_hog = feature.hog(gray, orientations=HOG_ORIENTATIONS, pixels_per_cell=HOG_WINDOW_SIZE, cells_per_block=(1, 1))
 
     # take an average over the HoG cells
     divided_hog = [image_hog[i:i + HOG_ORIENTATIONS] for i in range(0, len(image_hog), HOG_ORIENTATIONS)]
@@ -86,15 +77,3 @@ def get_histogram_vector(image):
 
     # return concatenation of histograms
     return norm_r_hist.tolist() + norm_g_hist.tolist() + norm_b_hist.tolist()
-
-
-def load_image(image_path):
-
-    # get image from bucket
-    download = wikiart_bucket.Object(image_path).get()['Body']
-    image = np.array(Image.open(download))
-
-    # set image to floats
-    float_image = img_as_float(image)
-
-    return float_image

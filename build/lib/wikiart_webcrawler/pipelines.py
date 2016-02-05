@@ -1,37 +1,57 @@
 # -*- coding: utf-8 -*-
-from os import remove
-import boto3
 from scrapy.exceptions import DropItem
-from scrapy.pipelines.images import ImagesPipeline
 from image_vectorizer.vectorizer import get_descriptor
+from PIL import Image
+from io import BytesIO
+import urllib
+from skimage import img_as_float
 
 
-class ArtworkDescriptorPipeline(ImagesPipeline):
+class ArtworkDescriptorPipeline(object):
 
-    # initialize wikiart s3 bucket
-    wikiart_bucket = boto3.resource('s3').Bucket('wikiart')
-
-    def item_completed(self, results, artwork, info):
+    def process_item(self, artwork, spider):
         """
         called after artwork image have been processed and ready for preprocessing
         to json serialization
         """
 
-        # pull images that were downloaded well
-        image_paths = [image['path'] for success, image in results if success]
+        # fetch image from url
+        image = load_image(artwork['image_urls'][0])
 
-        # if no image was downloaded, drop the item
-        if not image_paths:
-            raise DropItem("Item contains no images")
+        # evaluate and set Artwork's 'descriptor' data member from image
+        artwork['descriptor'] = get_descriptor(image)
 
-        # set the path to the Artwork's 'images' data member TODO revert to descriptor parsing
-        artwork['descriptor'] = get_descriptor(image_paths[0])
+        # verify item validity
+        # check descriptor length
+        if len(artwork['descriptor']) != 97:
+            raise DropItem("bad descriptor length: " + str(len(artwork['descriptor'])))
 
-        # unset 'image_urls' field for final parsing TODO restore field deletion
+        # check style exists
+        if len(artwork['style']) == 0:
+            raise DropItem("no style tag")
+
+        # unset 'image_urls' field for final parsing
         del artwork['image_urls']
-
-        # remove image file TODO restore image deletion for amazon
-        self.wikiart_bucket.objects.all().delete()
 
         # return artwork
         return artwork
+
+
+def load_image(image_path):
+
+    # attempt to read image from url, drop item if fetch failed
+    try:
+        image_response = urllib.urlopen(image_path).read()
+    except IOError:
+        raise DropItem("Could not download image")
+
+    # decode image response
+    decoded = BytesIO(image_response)
+
+    # convert to PIL image, ignores image dimension (:
+    image = Image.open(decoded)
+
+    # set image to floats
+    float_image = img_as_float(image)
+
+    return float_image

@@ -1,2 +1,0 @@
-wikiart_webcrawler
-image_vectorizer

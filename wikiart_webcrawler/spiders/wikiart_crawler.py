@@ -21,7 +21,7 @@ class WikiartGlobalSpider(scrapy.Spider):
         """
 
         # iterates over artists alphabet
-        for href in [response.css('.dictionaries-list .header a::attr(href)').extract_first()]:
+        for href in response.css('.dictionaries-list .header a::attr(href)').extract():
 
             # sets full url (instead of parse local)
             full_url = self.base_url+href
@@ -36,7 +36,7 @@ class WikiartGlobalSpider(scrapy.Spider):
         """
         called to crawl artist lists from alphabet pages http req response
         """
-
+        # TODO: remove extract_first to parse all
         # iterates over artists
         for href in [response.css('.artists-list li a::attr(href)').extract_first()]:
 
@@ -53,7 +53,6 @@ class WikiartGlobalSpider(scrapy.Spider):
         """
         called to crawl artwork lists from artist pages http req response
         """
-
         # TODO: remove extract_first to parse all
         # iterates over artist artwork list
         for href in [response.css("ul.title > li:first-child > a::attr(href)").extract_first()]:
@@ -82,7 +81,7 @@ class WikiartGlobalSpider(scrapy.Spider):
         # create and Artwork Item and parse attributes
         artwork = Artwork()
         artwork['image_urls'] = content_selector.css(".image img::attr(src)").extract()
-        artwork['style'] = content_selector.css(".info > dl:nth-child(4) a::text").extract()
+        artwork['style'] = content_selector.xpath('//span[contains(., "Style")]/following-sibling::a/text()').extract()
 
         yield artwork
 

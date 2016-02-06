@@ -1,4 +1,5 @@
-from skimage import color, feature
+from skimage.color import rgb2gray
+from skimage.feature import hog, local_binary_pattern
 import numpy as np
 
 # constant descriptor parameters
@@ -29,10 +30,10 @@ def get_descriptor(image):
 
 def get_lbp_vector(image):
     # set image to grays
-    gray = color.rgb2gray(image)
+    gray = rgb2gray(image)
 
     # evaluate lbp image reshaped into vector
-    lbp = feature.local_binary_pattern(gray, P=LBP_POINTS, R=LBP_RADIUS).ravel()
+    lbp = local_binary_pattern(gray, P=LBP_POINTS, R=LBP_RADIUS).ravel()
 
     # take histogram of the lbp image
     lbp_hist = np.histogram(lbp, bins=LBP_HIST_BIN)[0]
@@ -45,10 +46,10 @@ def get_lbp_vector(image):
 
 def get_hog_vector(image):
     # set image to grays
-    gray = color.rgb2gray(image)
+    gray = rgb2gray(image)
 
     # evaluate the HoG of the image over a 16x16 window
-    image_hog = feature.hog(gray, orientations=HOG_ORIENTATIONS, pixels_per_cell=HOG_WINDOW_SIZE, cells_per_block=(1, 1))
+    image_hog = hog(gray, orientations=HOG_ORIENTATIONS, pixels_per_cell=HOG_WINDOW_SIZE, cells_per_block=(1, 1))
 
     # take an average over the HoG cells
     divided_hog = [image_hog[i:i + HOG_ORIENTATIONS] for i in range(0, len(image_hog), HOG_ORIENTATIONS)]

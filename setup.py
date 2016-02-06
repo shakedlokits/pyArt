@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='33598',
     version='0.2dev',
-    packages=find_packages(),
+    packages=['wikiart_webcrawler', 'image_vectorizer'],
     entry_points={'scrapy': ['settings = wikiart_webcrawler.settings']},
     install_requires=[
         "Scrapy==1.0.4",

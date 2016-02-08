@@ -36,9 +36,9 @@ class WikiartGlobalSpider(scrapy.Spider):
         """
         called to crawl artist lists from alphabet pages http req response
         """
-        # TODO: remove extract_first to parse all
+
         # iterates over artists
-        for href in [response.css('.artists-list li a::attr(href)').extract_first()]:
+        for href in response.css('.artists-list li a::attr(href)').extract():
 
             # sets full url (instead of parse local)
             full_url = self.base_url+href
@@ -55,7 +55,7 @@ class WikiartGlobalSpider(scrapy.Spider):
         """
         # TODO: remove extract_first to parse all
         # iterates over artist artwork list
-        for href in [response.css("ul.title > li:first-child > a::attr(href)").extract_first()]:
+        for href in response.css("ul.title > li:first-child > a::attr(href)").extract():
 
             # sets full url (instead of parse local)
             full_url = self.base_url+href

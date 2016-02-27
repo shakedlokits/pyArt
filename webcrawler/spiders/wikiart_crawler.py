@@ -1,6 +1,6 @@
 import scrapy
 import logging
-from wikiart_webcrawler.items import Artwork
+from webcrawler.items import Artwork
 
 # debug prompt flag
 DEBUG = False

@@ -1,7 +1,14 @@
 from json import loads
 from sklearn import svm
 import numpy as np
+from skimage import img_as_float
+from PIL import Image
+from image_vectorizer.vectorizer import get_descriptor
 
+# NOTE: use like this
+# predictor=MultiClassSVM('./data/wikiart_data.json')
+# answer = predictor.predict('./data/dada_test.jpg')
+# print(answer)
 
 class ColorPrinter:
 
@@ -59,8 +66,8 @@ class MultiClassSVM:
             # extract image descriptors
             self.X = [artwork['descriptor'] for artwork in json_data]
 
-            # extract image labels
-            self.y = [artwork['style'][0] for artwork in json_data]
+            # extract image labels NOTE: added force encoding to ascii
+            self.y = [artwork['style'][0].encode('ascii', 'ignore').encode('ascii') for artwork in json_data]
 
             # insure image labels accepted as numpy string array
             self.y = np.asarray(self.y, dtype="|S")
@@ -70,8 +77,27 @@ class MultiClassSVM:
         # fit svm with training data
         self.classifier.fit(self.X, self.y)
 
-    def predict(self, descriptor):
+    @staticmethod
+    def load_image(image_path):
+
+        # loads image from file
+        image = Image.open(image_path)
+
+        # set image to floats
+        float_image = img_as_float(image)
+
+        return float_image
+
+    def predict(self, image_path):
+
+        # load image object
+        image = self.load_image(image_path)
+
+        # get descriptor from image
+        descriptor = get_descriptor(image)
 
         # return classifier prediction for given descriptor
         return self.classifier.predict([descriptor])[0]
+
+
 
